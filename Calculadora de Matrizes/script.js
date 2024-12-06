@@ -66,7 +66,7 @@ class MatrixCalculator {
 		this.rebuildMatrix();
 		if (this.AxDimension!=this.AyDimension) {
 			this.determinantA=null;
-			this.printOnConsole("Non-square matrix, determinant cannot be calculated.");
+			this.printOnConsole("Matriz não quadrada, não é possivel calcular a Determinante");
 			return;
 		}
 		var determinant;
@@ -97,7 +97,7 @@ class MatrixCalculator {
 		det.push(determinant);
 		localStorage.setItem('Determinant(A)',JSON.stringify(det));
 
-		this.printOnConsole("Determinant of matrix A: "+determinant)
+		this.printOnConsole("Determinante da matriz A: "+determinant)
 		return;
 	}
 
@@ -171,7 +171,7 @@ class MatrixCalculator {
     addMatrix() {
 		this.rebuildMatrix();
 		if (this.AxDimension!=this.AyDimension) {
-			this.printOnConsole("Matrices have different dimmensions.");
+			this.printOnConsole("As Matrizes tem diferentes dimensões.");
 			return;
 		}
 		var result = [];
@@ -183,7 +183,7 @@ class MatrixCalculator {
 				result[i][j]=Math.round((parseFloat(this.matrixA[i][j])+parseFloat(this.matrixB[i][j]))*100)/100;
 			}
 		}
-		var string = "Addition result:\r";
+		var string = "Resultado da soma:\r";
 		for (i =0; i<this.AyDimension; i++) {
 			for (var j=0; j<this.AxDimension; j++) {
 				string=string+"\t"+result[i][j];
@@ -196,7 +196,7 @@ class MatrixCalculator {
 	subtractMatrix() {
 		this.rebuildMatrix();
 		if (this.AxDimension!=this.AyDimension) {
-			this.printOnConsole("Matrices have different dimmensions.");
+			this.printOnConsole("As Matrizes tem diferentes dimensões.");
 			return;
 		}
 		var result = [];
@@ -207,7 +207,7 @@ class MatrixCalculator {
 				result[i][j]=Math.round((parseFloat(this.matrixA[i][j])-parseFloat(this.matrixB[i][j]))*100)/100;
 			}
 		}
-		var string = "Subtraction result:\r";
+		var string = "Resultado da subtração:\r";
 		for (i =0; i<this.AyDimension; i++) {
 			for (var j=0; j<this.AxDimension; j++) {
 				string=string+"\t"+result[i][j];
@@ -220,7 +220,7 @@ class MatrixCalculator {
 	multiplyMatrix() {
 		this.rebuildMatrix();
 		if (this.AxDimension!=this.ByDimension) {
-			this.printOnConsole("Number of columns on A is different from number of rows on B.");
+			this.printOnConsole("Numero de colunas da matriz A é diferente da matriz B");
 			return;
 		}
 		var result = [];
@@ -237,7 +237,7 @@ class MatrixCalculator {
 				result[i][j] = Math.round(result[i][j]*100)/100;
 			}
 		}
-		var string = "Multiplication result:\r";
+		var string = "Resultado da multiplicação:\r";
 		for (i=0; i<rowsRes; i++) {
 			for (j=0; j<columnsRes; j++) {
 				string=string+"\t"+result[i][j];
@@ -251,7 +251,7 @@ class MatrixCalculator {
 		this.rebuildMatrix();
 		if (this.BxDimension!=this.ByDimension) {
 			this.determinantB=null;
-			this.printOnConsole("Non-square matrix, determinant cannot be calculated.");
+			this.printOnConsole("Matriz não quadrada, não é possivel calcular a determinante.");
 			return;
 		}
 		var determinant;
@@ -280,7 +280,7 @@ class MatrixCalculator {
 		}
 		det.push(determinant);
 		localStorage.setItem('Determinant(B)',JSON.stringify(det));
-		this.printOnConsole("Determinant of matrix B: "+determinant)
+		this.printOnConsole("Determinante da matriz B: "+determinant)
 		return;
 	}
 
